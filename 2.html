@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{text-align: center;}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+	<div id="lan"></div>
+</body>
+<script>
+var arr=[{
+    title:"喜迎两会",
+    content:"两会的召开，是在全面建设小康社会。。。。",
+    comments:[{content:[{name:"我是评论1"},{name:"我是评论1的评论"}]},{content:[{name:"我是评论2"},{name:"我是评论2的评论"}]}]
+}]
+for (var i = 0; i < arr.length; i++) {
+	$('#lan').append(`<h2>${arr[i].title}</h2><li>${arr[i].content}</li>`)
+	for (var j = 0; j < arr[i].comments.length; j++) {
+		//console.log(arr[i].comments[j].content[i].name)
+		for (var l = 0; l < arr[i].comments[j].content.length; l++) {
+			console.log(arr[i].comments[j].content[l].name)
+			$('li').eq(i).append(`<p>${arr[i].comments[j].content[l].name}</p>`)
+		}
+	}
+}
+</script>
+</html>

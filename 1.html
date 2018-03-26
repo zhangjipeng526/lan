@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>	
+		p{display: none;}
+		li:hover p{display: block;}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+	<div id="lan"></div>
+	<ul id="lanf">
+		
+	</ul>
+</body>
+	<script>
+		var arr = [['x','w'],['j']]
+		/*for (var i = 0; i < arr.length; i++) {
+			for (var j = 0; j < arr[i].length; j++) {
+				console.log(arr[i][j])
+				document.write(arr[i][j])
+			}
+		}*/
+		var arr2 = [
+			{
+				'name':'index',
+				'list':[{'name':'about'},{'name':'news'}]
+			},
+			{
+				'name':'download',
+				'list':[{'name':'software'}]
+			}
+		]
+
+		for(var i in arr2){
+			console.log(arr2[i].name)
+			$('#lanf').append(`<li>${arr2[i].name}</li>`)
+			for (var j in arr2[i].list) {
+				console.log(arr2[i].list[j].name)
+				$('li').eq(i).append(`<p>${arr2[i].list[j].name}</p>`)
+			}
+		}
+
+
+
+		//lan.innerHTML = arr		
+
+
+		/*for (var i = 0; i < arr2.length; i++) {
+			lanf.innerHTML += `<li>${arr2[i].name}</li>`
+			for (var j = 0; j < arr2.length; j++) {
+				lanf.innerHTML += `<p>${arr2[i].list[0].name}</p>`
+			}
+		}
+		$(function () {
+			$('li').click(function(){
+			  $("p").toggle();
+			})
+		})*/
+	</script>
+</html>
